@@ -50,6 +50,54 @@
             ]
         },
         {
+            "name": "RightController",
+            "id": "c453e2d0-9bcc-47c1-8a43-7e2424de47e9",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "cabe9df6-cbfd-4531-a6ff-28330607dfdd",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Trigger",
+                    "type": "Value",
+                    "id": "0c8072ae-34d5-40e1-a186-b1e00392f205",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3adb66af-bacd-4ee4-bbdb-1da9aa9fcadf",
+                    "path": "<XRController>{RightHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6aa0dd51-c59d-41d2-8f21-54162ff9d5d4",
+                    "path": "<XRController>{RightHand}/{Trigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Head",
             "id": "a01886a3-5571-4a0c-9e92-4eb1ddd07e99",
             "actions": [

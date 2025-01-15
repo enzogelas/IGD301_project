@@ -1,0 +1,2 @@
+C:\TELECOM3A\IGD301(VR)\Lab\IGD301_project\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\TELECOM3A\IGD301(VR)\Lab\IGD301_project\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
