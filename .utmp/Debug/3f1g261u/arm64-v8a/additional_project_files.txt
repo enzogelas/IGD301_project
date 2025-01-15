@@ -1,0 +1,17 @@
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\GAToUnityCallbacks.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\MacroEnd.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\MacroHeaderBegin.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\MacroSourceBegin.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAApplication.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAConfiguration.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGADebug.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAEvents.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAInput.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboard.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboardCallbacks.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGATypes.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAVersion.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGACallbacks.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
+C:\Example-VR\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h

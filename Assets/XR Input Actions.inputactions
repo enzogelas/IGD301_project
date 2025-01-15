@@ -1,0 +1,102 @@
+{
+    "name": "XR Input Actions",
+    "maps": [
+        {
+            "name": "LeftController",
+            "id": "9c0c1cdf-f5c7-4391-9058-e3d8e1a994da",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "0d29234a-bfe9-45a8-9a3b-6d68a2e2dda1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Trigger",
+                    "type": "Value",
+                    "id": "017baea7-be8b-4f6c-8f97-23e3b7ae358d",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5deb6750-f5d0-4acb-8cab-37aad8a3b980",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c98980c7-57c7-4f7c-91fe-71fcc000efd8",
+                    "path": "<XRController>{LeftHand}/{Trigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Head",
+            "id": "a01886a3-5571-4a0c-9e92-4eb1ddd07e99",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "10480f9b-fa3a-4301-8fd9-5ac3c05d2a42",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "f566c715-19d5-441f-b19b-1788ae712d20",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "938c38ac-f4a5-4daa-8731-e4b695817857",
+                    "path": "<XRHMD>/{DevicePosition}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eecfaa2f-e663-43bc-ae3f-cc3bb73c70eb",
+                    "path": "<XRHMD>/{DeviceRotation}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

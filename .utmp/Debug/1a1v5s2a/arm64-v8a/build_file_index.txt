@@ -1,0 +1,2 @@
+C:\TELECOM3A\IGD301(VR)\Lab\VR-BaseExample\Library\PramData\AndroidApplicationController\Cache\com.Enzooooo.VRBaseEnvironmentV15\gradle-project\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\TELECOM3A\IGD301(VR)\Lab\VR-BaseExample\Library\PramData\AndroidApplicationController\Cache\com.Enzooooo.VRBaseEnvironmentV15\gradle-project\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
