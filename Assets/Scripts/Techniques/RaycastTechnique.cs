@@ -41,7 +41,20 @@ public class RaycastTechnique : InteractionTechnique
         {
             // Sending the selected object hit by the raycast
             currentSelectedObject = hit.collider.gameObject;
-            currentObjectText.text = currentSelectedObject.name;
+            string objectName = currentSelectedObject.name;
+            if(objectName == "Panel")
+            {
+                Vector3 hitPoint = hit.point;
+                Vector3 localHitPoint = currentSelectedObject.transform.InverseTransformPoint(hitPoint);
+                Vector2 panelCoordinates = new Vector2(localHitPoint.x, localHitPoint.y);
+
+                currentObjectText.text = "Panel hit at point: " +panelCoordinates.ToString();
+            }
+            else
+            {
+                currentObjectText.text = currentSelectedObject.name;
+            }
+            
         }
 
         // Determining the end of the LineRenderer depending on whether we hit an object or not
