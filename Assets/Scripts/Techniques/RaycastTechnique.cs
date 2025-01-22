@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
-using TMPro;
 
 public class RaycastTechnique : InteractionTechnique
 {
@@ -10,23 +9,24 @@ public class RaycastTechnique : InteractionTechnique
     int raycastMaxDistance = 1000;
 
     [SerializeField]
-    private GameObject rightController;
+    private GameObject ray;
 
     private LineRenderer lineRenderer;
 
-    public XRInputValueReader<float> m_TriggerInput = new XRInputValueReader<float>("Trigger");
+    [SerializeField]
+    private XRInputValueReader<float> m_TriggerInput = new XRInputValueReader<float>("Trigger");
 
     private Vector3 localOrigin = new Vector3(0, 0, 0);
     private Vector3 localDirection = new Vector3(0, 0, 1);
 
     private void Start()
     {
-        lineRenderer = rightController.GetComponent<LineRenderer>();
+        lineRenderer = ray.GetComponent<LineRenderer>();
     }
 
     private void FixedUpdate()
     {
-        Transform rightControllerTransform = rightController.transform;
+        Transform rightControllerTransform = ray.transform;
         
         // Set the beginning of the line renderer to the position of the controller
         lineRenderer.SetPosition(0, localOrigin);
@@ -40,21 +40,7 @@ public class RaycastTechnique : InteractionTechnique
         if (triggerValue > 0.1f && hasHit)
         {
             // Sending the selected object hit by the raycast
-            currentSelectedObject = hit.collider.gameObject;
-            string objectName = currentSelectedObject.name;
-            if(objectName == "Panel")
-            {
-                Vector3 hitPoint = hit.point;
-                Vector3 localHitPoint = currentSelectedObject.transform.InverseTransformPoint(hitPoint);
-                Vector2 panelCoordinates = new Vector2(localHitPoint.x, localHitPoint.y);
-
-                currentObjectText.text = "Panel hit at point: " +panelCoordinates.ToString();
-            }
-            else
-            {
-                currentObjectText.text = currentSelectedObject.name;
-            }
-            
+            currentSelectedObject = hit.collider.gameObject;            
         }
 
         // Determining the end of the LineRenderer depending on whether we hit an object or not

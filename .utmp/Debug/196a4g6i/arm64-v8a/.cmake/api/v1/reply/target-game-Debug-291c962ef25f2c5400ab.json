@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/TELECOM3A/IGD301(VR)/Lab/IGD301_project/Library/PramData/AndroidApplicationController/Cache/com.ZhuEnzo.SupermarketProjectV2/gradle-project/unityLibrary/build/intermediates/cxx/Debug/196a4g6i/obj/arm64-v8a/libgame.so"
+			"path" : "C:/TELECOM3A/IGD301(VR)/Lab/IGD301_project/Library/PramData/AndroidApplicationController/Cache/com.ZhuEnzo.SupermarketProjectV4/gradle-project/unityLibrary/build/intermediates/cxx/Debug/196a4g6i/obj/arm64-v8a/libgame.so"
 		}
 	],
 	"backtrace" : 1,
@@ -73,7 +73,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/TELECOM3A/IGD301(VR)/Lab/IGD301_project/Library/PramData/AndroidApplicationController/Cache/com.ZhuEnzo.SupermarketProjectV2/gradle-project/unityLibrary/src/main/cpp/GameActivity"
+					"path" : "C:/TELECOM3A/IGD301(VR)/Lab/IGD301_project/Library/PramData/AndroidApplicationController/Cache/com.ZhuEnzo.SupermarketProjectV4/gradle-project/unityLibrary/src/main/cpp/GameActivity"
 				},
 				{
 					"backtrace" : 2,

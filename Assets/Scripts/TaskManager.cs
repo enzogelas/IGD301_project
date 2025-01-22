@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum INTERACTION_TYPE
 {
@@ -22,6 +23,9 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField]
     MyTechnique myTechnique;
+
+    // MODIFIED MODIFIED MODIFIED
+    public UnityEvent<Vector3> nextPositionEvent;
 
     private int currentTaskIndex = 0;
 
@@ -53,6 +57,9 @@ public class TaskManager : MonoBehaviour
 
         currentTaskLog = new TaskLog(Time.time, objectToSelectScript.GetObjectName());
         objectToSelectScript.SetAsTarget();
+
+        // MODIFIED MODIFIED MODIFIED
+        nextPositionEvent.Invoke(objectsToSelect[currentTaskIndex].transform.position);
     }
 
     public GameObject GetCurrentObjectToSelect()
@@ -72,6 +79,8 @@ public class TaskManager : MonoBehaviour
         {
             objectToSelectScript.SetAsSuccess();
             BeginNextSelectionTask();
+            // MODIFIED MODIFIED MODIFIED
+            nextPositionEvent.Invoke(objectsToSelect[currentTaskIndex].transform.position);
         }
     }
 
