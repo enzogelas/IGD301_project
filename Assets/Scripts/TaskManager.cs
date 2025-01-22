@@ -29,6 +29,9 @@ public class TaskManager : MonoBehaviour
 
     private int currentTaskIndex = 0;
 
+    [SerializeField]
+    private GameObject endMessageGameObject;
+
     // Log variables
     private List<TaskLog> taskLogs;
     private TaskLog currentTaskLog;
@@ -60,6 +63,8 @@ public class TaskManager : MonoBehaviour
 
         // MODIFIED MODIFIED MODIFIED
         nextPositionEvent.Invoke(objectsToSelect[currentTaskIndex].transform.position);
+
+        endMessageGameObject.SetActive(false);
     }
 
     public GameObject GetCurrentObjectToSelect()
@@ -110,6 +115,7 @@ public class TaskManager : MonoBehaviour
                 GenerateReport();
             }
             // TODO handle end of study
+            endMessageGameObject.SetActive(true);
         }
     }
 
@@ -129,7 +135,7 @@ public class TaskManager : MonoBehaviour
     {
         //** N.B. use .persistentDataPath if running on Quest/device unlinked,
         //**      else use .dataPath if Quest/device is linked/connected to machine via USB.
-        string path = Application.dataPath + "/" + filename;
+        string path = Application.persistentDataPath + "/" + filename;
         //string path = Application.persistentDataPath + "/" + filename;
 
         //** Create new file if it doesn't exist, if append to file to avoid overwritting data due to selection error from previous scene.

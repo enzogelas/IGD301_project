@@ -19,10 +19,10 @@ public class Arrow : MonoBehaviour {
     private Material farObjectMaterial;
 
     [SerializeField]
-    private float closeDistance = 0.4f;
+    private float closeDistance = 2.0f;
 
     [SerializeField]
-    private float farDistance = 2.0f;
+    private float farDistance = 10.0f;
 
 	void Update () {
         GameObject currentObjectToSelect = taskManager.GetCurrentObjectToSelect();

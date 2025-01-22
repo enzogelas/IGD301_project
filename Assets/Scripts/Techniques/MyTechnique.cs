@@ -17,9 +17,6 @@ public class MyTechnique : InteractionTechnique
     private Transform characterTransform;
 
     [SerializeField]
-    private TextMeshProUGUI currentObjectText;
-
-    [SerializeField]
     private RectTransform characterPositionIndicator;
 
     [SerializeField]
@@ -60,30 +57,10 @@ public class MyTechnique : InteractionTechnique
         {
             // Sending the selected object hit by the raycast
             currentSelectedObject = hit.collider.gameObject;
-            string objectName = currentSelectedObject.name;
-            // I f the users pointed at the map, the character will be moved to the corresponding point
-            if(objectName == "Panel")
-            {
-                RectTransform panelRectTransform = currentSelectedObject.GetComponent<RectTransform>();
-                float panelWidth = panelRectTransform.rect.width;
-                float panelHeight = panelRectTransform.rect.height;
-                Debug.Log("Panel Width: " + panelWidth + ", Panel Height: " + panelHeight);
-           
-                Vector3 hitPoint = hit.point;
-                Vector3 localHitPoint = currentSelectedObject.transform.InverseTransformPoint(hitPoint);
-                Vector2 panelCoordinates = new Vector2(localHitPoint.x, localHitPoint.y);
-
-                characterTransform.position = new Vector3(localHitPoint.x*140, 0, localHitPoint.y*6/0.4f);
-
-                currentObjectText.text = "Panel hit at point: " +panelCoordinates.ToString();
-            }
-            else
-            {
-                currentObjectText.text = currentSelectedObject.name;
-            } 
+            //string objectName = currentSelectedObject.name;
         }
 
-        characterPositionIndicator.anchoredPosition = new Vector2(characterTransform.position.x/140, characterTransform.position.z/(6/0.4f));
+        //characterPositionIndicator.anchoredPosition = new Vector2(characterTransform.position.x/140, characterTransform.position.z/(6/0.4f));
 
         // Determining the end of the LineRenderer depending on whether we hit an object or not
         if (hasHit)

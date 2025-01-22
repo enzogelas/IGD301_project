@@ -1,4 +1,4 @@
-# Install script for directory: C:/TELECOM3A/IGD301(VR)/Lab/IGD301_project/Library/PramData/AndroidApplicationController/Cache/com.ZhuEnzo.SupermarketProjectV4/gradle-project/unityLibrary/src/main/cpp/GameActivity
+# Install script for directory: C:/TELECOM3A/IGD301(VR)/Lab/IGD301_project/Library/PramData/AndroidApplicationController/Cache/com.ZhuEnzo.SupermarketProjectV7/gradle-project/unityLibrary/src/main/cpp/GameActivity
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
