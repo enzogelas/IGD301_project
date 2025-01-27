@@ -6,6 +6,7 @@ using TMPro;
 using UnityEditor;
 using System.Linq;
 using Unity.Mathematics;
+using UnityEngine.EventSystems;
 
 // Your implemented technique inherits the InteractionTechnique class
 
@@ -63,13 +64,13 @@ public class MyTechnique : InteractionTechnique
 
     public void OnNewItemPosition(Vector3 position)
     {
-        nextItemIndicator.anchoredPosition = new Vector2(position.x/140, position.z/Mathf.Abs(position.z) * 0.46f);
+        nextItemIndicator.anchoredPosition = new Vector2(position.x / 140, position.z / Mathf.Abs(position.z) * 0.46f);
     }
 
     private void FixedUpdate()
     {
         Transform rightControllerTransform = ray.transform;
-        
+
         // Set the beginning of the line renderer to the position of the controller
         lineRenderer.SetPosition(0, localOrigin);
 
@@ -85,6 +86,16 @@ public class MyTechnique : InteractionTechnique
             {
                 // collect all the colliders that intersect with a capsule
                 Collider[] hitColliders = Physics.OverlapCapsule(rightControllerTransform.position, rightControllerTransform.position + rightControllerTransform.forward * 100, 0.7f);
+
+                // order by distance
+                hitColliders = hitColliders.OrderBy(x => Vector3.Distance(x.transform.position, rightControllerTransform.position)).ToArray();
+
+                // remove far away objects if there are too many
+                if (hitColliders.Length > 8)
+                {
+                    hitColliders = hitColliders.Take(8).ToArray();
+                }
+                
 
                 // for all the colliders that intersect with the sphere
                 foreach (var hitCollider in hitColliders)
@@ -102,23 +113,20 @@ public class MyTechnique : InteractionTechnique
                     {
                         continue;
                     }
-                    Debug.Log("Clicked " + hitCollider.name);
+                    //Debug.Log("Clicked " + hitCollider.name);
                     intersectingObjects.Add(hitCollider.gameObject, (hitCollider.transform.position, hitCollider.GetComponent<Renderer>().material.color));
                 }
 
                 // calculate angle between each object
                 float angle = 360f / intersectingObjects.Count;
                 int count = 0;
-                Vector3 center = rightControllerTransform.position + rightControllerTransform.forward * flowDistance;
+                flowDistance = intersectingObjects.Count / 2.0f;
+                Vector3 center = rightControllerTransform.position + rightControllerTransform.forward * (2.0f + flowDistance);
                 foreach (var intersectingObject in intersectingObjects)
                 {
                     // move the object in front of the camera
-                    Vector3 offset = new Vector3(
-                        Mathf.Cos(angle * count * Mathf.Deg2Rad),
-                        Mathf.Sin(angle * count * Mathf.Deg2Rad),
-                        0
-                        );
-                    intersectingObject.Key.transform.position = center + offset * 1.5f;
+                    Vector3 tempPos = center + rightControllerTransform.right * flowDistance * Mathf.Cos(count * angle * Mathf.Deg2Rad) + rightControllerTransform.up * flowDistance * Mathf.Sin(count * angle * Mathf.Deg2Rad);
+                    intersectingObject.Key.transform.position = tempPos;
                     // rotate the object around the ray
                     count++;
                 }
@@ -131,7 +139,7 @@ public class MyTechnique : InteractionTechnique
                 foreach (var intersectingObject in intersectingObjects)
                 {
                     // calculate the distance between the object and the ray
-                    float distance = Vector3.Distance(intersectingObject.Key.transform.position, rightControllerTransform.position + rightControllerTransform.forward * flowDistance);
+                    float distance = Vector3.Distance(intersectingObject.Key.transform.position, rightControllerTransform.position + rightControllerTransform.forward * (2.0f + flowDistance));
                     if (distance < minDistance)
                     {
                         minDistance = distance;
@@ -139,7 +147,7 @@ public class MyTechnique : InteractionTechnique
                     }
                 }
                 // highlight the closest object
-                if (closestObject != null && minDistance < 2.0f)
+                if (closestObject != null && minDistance <  math.max(flowDistance * 0.7f, 1.5f))
                 {
                     // reset the color of the previous closest object
                     if (flowSelectedObject != null && closestObject != flowSelectedObject)
@@ -165,17 +173,10 @@ public class MyTechnique : InteractionTechnique
                 intersectingObject.Key.GetComponent<Renderer>().material.color = intersectingObject.Value.originalColor;
             }
             intersectingObjects.Clear();
-            // simulate selection
-            if (flowSelectedObject != null)
+            // selection
+            if (flowSelectedObject != null && currentSelectedObject != flowSelectedObject)
             {
-                if (flowSelectedObject.GetComponent<Renderer>().material.color == Color.green)
-                {
-                    flowSelectedObject.GetComponent<Renderer>().material.color = Color.blue;
-                }
-                else
-                {
-                    flowSelectedObject.GetComponent<Renderer>().material.color = Color.green;
-                }
+                currentSelectedObject = flowSelectedObject;
                 flowSelectedObject = null;
             }
         }
