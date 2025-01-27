@@ -52,6 +52,9 @@ public class MyTechnique : InteractionTechnique
     // selected object
     private GameObject flowSelectedObject = null;
 
+    // flowDistance
+    private float flowDistance = 4.0f;
+
     private void Start()
     {
         lineRenderer = ray.GetComponent<LineRenderer>();
@@ -81,7 +84,7 @@ public class MyTechnique : InteractionTechnique
             if (intersectingObjects.Count == 0)
             {
                 // collect all the colliders that intersect with a capsule
-                Collider[] hitColliders = Physics.OverlapCapsule(rightControllerTransform.position, rightControllerTransform.position + rightControllerTransform.forward * 100, 0.5f);
+                Collider[] hitColliders = Physics.OverlapCapsule(rightControllerTransform.position, rightControllerTransform.position + rightControllerTransform.forward * 100, 0.7f);
 
                 // for all the colliders that intersect with the sphere
                 foreach (var hitCollider in hitColliders)
@@ -106,7 +109,7 @@ public class MyTechnique : InteractionTechnique
                 // calculate angle between each object
                 float angle = 360f / intersectingObjects.Count;
                 int count = 0;
-                Vector3 center = rightControllerTransform.position + rightControllerTransform.forward * 2;
+                Vector3 center = rightControllerTransform.position + rightControllerTransform.forward * flowDistance;
                 foreach (var intersectingObject in intersectingObjects)
                 {
                     // move the object in front of the camera
@@ -115,7 +118,7 @@ public class MyTechnique : InteractionTechnique
                         Mathf.Sin(angle * count * Mathf.Deg2Rad),
                         0
                         );
-                    intersectingObject.Key.transform.position = center + offset * 2;
+                    intersectingObject.Key.transform.position = center + offset * 1.5f;
                     // rotate the object around the ray
                     count++;
                 }
@@ -128,7 +131,7 @@ public class MyTechnique : InteractionTechnique
                 foreach (var intersectingObject in intersectingObjects)
                 {
                     // calculate the distance between the object and the ray
-                    float distance = Vector3.Distance(intersectingObject.Key.transform.position, rightControllerTransform.position + rightControllerTransform.forward * 2);
+                    float distance = Vector3.Distance(intersectingObject.Key.transform.position, rightControllerTransform.position + rightControllerTransform.forward * flowDistance);
                     if (distance < minDistance)
                     {
                         minDistance = distance;
@@ -136,7 +139,7 @@ public class MyTechnique : InteractionTechnique
                     }
                 }
                 // highlight the closest object
-                if (closestObject != null)
+                if (closestObject != null && minDistance < 2.0f)
                 {
                     // reset the color of the previous closest object
                     if (flowSelectedObject != null && closestObject != flowSelectedObject)
@@ -145,6 +148,11 @@ public class MyTechnique : InteractionTechnique
                     }
                     flowSelectedObject = closestObject;
                     flowSelectedObject.GetComponent<Renderer>().material.color = Color.red;
+                }
+                else if (flowSelectedObject != null)
+                {
+                    flowSelectedObject.GetComponent<Renderer>().material.color = intersectingObjects[flowSelectedObject].originalColor;
+                    flowSelectedObject = null;
                 }
             }
         }
@@ -157,6 +165,19 @@ public class MyTechnique : InteractionTechnique
                 intersectingObject.Key.GetComponent<Renderer>().material.color = intersectingObject.Value.originalColor;
             }
             intersectingObjects.Clear();
+            // simulate selection
+            if (flowSelectedObject != null)
+            {
+                if (flowSelectedObject.GetComponent<Renderer>().material.color == Color.green)
+                {
+                    flowSelectedObject.GetComponent<Renderer>().material.color = Color.blue;
+                }
+                else
+                {
+                    flowSelectedObject.GetComponent<Renderer>().material.color = Color.green;
+                }
+                flowSelectedObject = null;
+            }
         }
 
 
