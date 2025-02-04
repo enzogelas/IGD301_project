@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: ZhuEnzo
-  productName: SupermarketProjectV7
+  productName: FinalProject_Raycasting
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -144,6 +144,10 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   - {fileID: -944628639613478452, guid: de0a55fbc4ac6a34081fac9ae6aac1a2, type: 3}
+  - {fileID: 1825844055716355381, guid: 51e862a1572389d4b9238c411809d120, type: 2}
+  - {fileID: 11400000, guid: 4172cdee18a094f48840b4c98d18c9d7, type: 2}
+  - {fileID: 11400000, guid: 7afb67d9447858a4a96df99149af762e, type: 2}
+  - {fileID: -1174023937286287119, guid: 207b28bd92805704da6a2f39cc8214fe, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -165,7 +169,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.ZhuEnzo.SupermarketProjectV7
+    Android: com.ZhuEnzo.FinalProject_Raycasting
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:

@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "C:\\TELECOM3A\\IGD301(VR)\\Project\\IGD301_project\\Library\\PramData\\AndroidApplicationController\\Cache\\com.ZhuEnzo.FinalProject_Raycasting\\gradle-project\\unityLibrary\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\TELECOM3A\\IGD301(VR)\\Project\\IGD301_project\\Library\\PramData\\AndroidApplicationController\\Cache\\com.ZhuEnzo.FinalProject_Raycasting\\gradle-project\\unityLibrary\\src\\main\\cpp\\GameActivity\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.0.27f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\TELECOM3A\\IGD301(VR)\\Project\\IGD301_project\\.utmp\\Debug\\363u4n72\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Program Files\\Unity\\Hub\\Editor\\6000.0.27f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\TELECOM3A\\IGD301(VR)\\Project\\IGD301_project\\.utmp\\Debug\\363u4n72\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "game::@d02bb112ea9f9c2ed29f": {
+      "artifactName": "game",
+      "abi": "arm64-v8a",
+      "output": "C:\\TELECOM3A\\IGD301(VR)\\Project\\IGD301_project\\Library\\PramData\\AndroidApplicationController\\Cache\\com.ZhuEnzo.FinalProject_Raycasting\\gradle-project\\unityLibrary\\build\\intermediates\\cxx\\Debug\\363u4n72\\obj\\arm64-v8a\\libgame.so",
+      "runtimeFiles": []
+    }
+  }
+}
